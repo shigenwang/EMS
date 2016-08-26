@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.future.ssh.domain">
+<class name="PDecide" table="a_pDecide">
+
+	<id name="id" type="long" column="id">
+		 <generator class="native"/>
+	</id>
+	 <property name="bankAccount" type="text" ></property>
+	  <property name="caseIntroduction" type="text" length="500"></property>
+    <property name="payBank" type="string"></property>
+    <property name="actualFines" type="int"></property>
+    <property name="adreconTimeLimit" type="int"></property>
+    <property name="adreconAddress1" type="string"></property>
+    <property name="adreconAddress2" type="string"></property>
+    <property name="legalSuggest" type="text" length="65536"></property>
+    <property name="date" type="timestamp"></property>
+    <property name="legalFlag" type="boolean"></property>
+    <property name="printFlag" type="boolean"></property>
+    
+    
+	 <property name="paragraph2" type="text" length="65536"></property>
+	 <property name="paragraph3" type="text" length="65536"></property>
+	 <property name="paragraph4" type="text" length="65536"></property>
+	 <property name="paragraph5" type="text" length="65536"></property>
+	 <property name="paragraph6" type="text" length="65536"></property>
+	 <property name="paragraph7" type="text" length="65536"></property>
+	 <property name="paragraph8" type="text" length="65536"></property>
+	 
+	 <many-to-one name="pdfDocument"   unique="true" class="PDFDocument" column="pdfDocument_id"></many-to-one>   
+    <!-- accreditation属性，本类与Accreditation 一对一的关系-->
+    <many-to-one name="accreditation" class="Accreditation" column="accreditation_id" unique="true"></many-to-one>
+    
+    <!--summary属性，本类与Summary的多对一的关系-->
+    <many-to-one name="summary" column="summary_id" class="Summary"></many-to-one>
+    
+  
+ </class> 
+</hibernate-mapping>

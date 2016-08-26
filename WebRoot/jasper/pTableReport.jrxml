@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportnight" language="groovy" pageWidth="595" pageHeight="842" columnWidth="475" leftMargin="60" rightMargin="60" topMargin="40" bottomMargin="55" uuid="69afd6ae-a05a-421e-bf42-948e365e167e">
+	<property name="ireport.zoom" value="1.210000000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="529"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="CRCSuggest" class="java.lang.String">
+		<fieldDescription><![CDATA[CRCSuggest]]></fieldDescription>
+	</field>
+	<field name="ICOrCRCDecide" class="java.lang.String">
+		<fieldDescription><![CDATA[ICOrCRCDecide]]></fieldDescription>
+	</field>
+	<field name="ICSuggest" class="java.lang.String">
+		<fieldDescription><![CDATA[ICSuggest]]></fieldDescription>
+	</field>
+	<field name="PTableId" class="java.lang.Long">
+		<fieldDescription><![CDATA[PTableId]]></fieldDescription>
+	</field>
+	<field name="assistantHandleName" class="java.lang.String">
+		<fieldDescription><![CDATA[assistantHandleName]]></fieldDescription>
+	</field>
+	<field name="basicCase" class="java.lang.String">
+		<fieldDescription><![CDATA[basicCase]]></fieldDescription>
+	</field>
+	<field name="bigCaptainDate" class="java.util.Date">
+		<fieldDescription><![CDATA[bigCaptainDate]]></fieldDescription>
+	</field>
+	<field name="bigCaptainDateStr" class="java.lang.String">
+		<fieldDescription><![CDATA[bigCaptainDateStr]]></fieldDescription>
+	</field>
+	<field name="bigCaptainName" class="java.lang.String">
+		<fieldDescription><![CDATA[bigCaptainName]]></fieldDescription>
+	</field>
+	<field name="bigCaptainSuggest" class="java.lang.String">
+		<fieldDescription><![CDATA[bigCaptainSuggest]]></fieldDescription>
+	</field>
+	<field name="captainDate" class="java.util.Date">
+		<fieldDescription><![CDATA[captainDate]]></fieldDescription>
+	</field>
+	<field name="captainDateStr" class="java.lang.String">
+		<fieldDescription><![CDATA[captainDateStr]]></fieldDescription>
+	</field>
+	<field name="captainName" class="java.lang.String">
+		<fieldDescription><![CDATA[captainName]]></fieldDescription>
+	</field>
+	<field name="captainSuggest" class="java.lang.String">
+		<fieldDescription><![CDATA[captainSuggest]]></fieldDescription>
+	</field>
+	<field name="caseLevel" class="java.lang.String">
+		<fieldDescription><![CDATA[caseLevel]]></fieldDescription>
+	</field>
+	<field name="caseRevCommNames" class="java.lang.String">
+		<fieldDescription><![CDATA[caseRevCommNames]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="client" class="java.lang.String">
+		<fieldDescription><![CDATA[client]]></fieldDescription>
+	</field>
+	<field name="currentSign" class="java.lang.String">
+		<fieldDescription><![CDATA[currentSign]]></fieldDescription>
+	</field>
+	<field name="depLeaderDate" class="java.util.Date">
+		<fieldDescription><![CDATA[depLeaderDate]]></fieldDescription>
+	</field>
+	<field name="depLeaderDateStr" class="java.lang.String">
+		<fieldDescription><![CDATA[depLeaderDateStr]]></fieldDescription>
+	</field>
+	<field name="depLeaderName" class="java.lang.String">
+		<fieldDescription><![CDATA[depLeaderName]]></fieldDescription>
+	</field>
+	<field name="depLeaderSuggest" class="java.lang.String">
+		<fieldDescription><![CDATA[depLeaderSuggest]]></fieldDescription>
+	</field>
+	<field name="department" class="java.lang.String">
+		<fieldDescription><![CDATA[department]]></fieldDescription>
+	</field>
+	<field name="factAndSuggestion" class="java.lang.String">
+		<fieldDescription><![CDATA[factAndSuggestion]]></fieldDescription>
+	</field>
+	<field name="hostDate" class="java.util.Date">
+		<fieldDescription><![CDATA[hostDate]]></fieldDescription>
+	</field>
+	<field name="hostDateStr" class="java.lang.String">
+		<fieldDescription><![CDATA[hostDateStr]]></fieldDescription>
+	</field>
+	<field name="illegalGrade" class="java.lang.String">
+		<fieldDescription><![CDATA[illegalGrade]]></fieldDescription>
+	</field>
+	<field name="indCommNames" class="java.lang.String">
+		<fieldDescription><![CDATA[indCommNames]]></fieldDescription>
+	</field>
+	<field name="legGuideSuggest" class="java.lang.String">
+		<fieldDescription><![CDATA[legGuideSuggest]]></fieldDescription>
+	</field>
+	<field name="legSuggest" class="java.lang.String">
+		<fieldDescription><![CDATA[legSuggest]]></fieldDescription>
+	</field>
+	<field name="legalBasis" class="java.lang.String">
+		<fieldDescription><![CDATA[legalBasis]]></fieldDescription>
+	</field>
+	<field name="legalDate" class="java.util.Date">
+		<fieldDescription><![CDATA[legalDate]]></fieldDescription>
+	</field>
+	<field name="legalDateStr" class="java.lang.String">
+		<fieldDescription><![CDATA[legalDateStr]]></fieldDescription>
+	</field>
+	<field name="legalName" class="java.lang.String">
+		<fieldDescription><![CDATA[legalName]]></fieldDescription>
+	</field>
+	<field name="outCome" class="java.lang.String">
+		<fieldDescription><![CDATA[outCome]]></fieldDescription>
+	</field>
+	<field name="sponsorName" class="java.lang.String">
+		<fieldDescription><![CDATA[sponsorName]]></fieldDescription>
+	</field>
+	<field name="squadronName" class="java.lang.String">
+		<fieldDescription><![CDATA[squadronName]]></fieldDescription>
+	</field>
+	<field name="summaryName" class="java.lang.String">
+		<fieldDescription><![CDATA[summaryName]]></fieldDescription>
+	</field>
+	<field name="taskId" class="java.lang.String">
+		<fieldDescription><![CDATA[taskId]]></fieldDescription>
+	</field>
+	<field name="hostSuggest" class="java.lang.String">
+		<fieldDescription><![CDATA[hostSuggest]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="747" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="475" height="38" uuid="3932d1f5-b66c-4aca-8202-0a3e442cb690"/>
+				<textElement textAlignment="Center">
+					<font fontName="黑体" size="24" isBold="false" pdfFontName="simhei.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[郑州市中原区城市管理行政执法局]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="38" width="475" height="31" uuid="8f3e460b-0ede-4ba1-9278-2bd60b68dd99"/>
+				<textElement textAlignment="Center">
+					<font fontName="黑体" size="18" isBold="false" pdfFontName="simhei.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[案件处理审批表]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="76" width="475" height="670" uuid="041c0d1d-5711-4023-b33e-563cb88aaf5d"/>
+			</rectangle>
+			<line>
+				<reportElement x="67" y="75" width="1" height="670" uuid="1eaaa5c9-69b8-4af2-a641-253a18e6d4ac"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="1" y="722" width="67" height="22" uuid="b399f641-dae3-4aca-a135-759bf5ae26b3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[备注]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="99" width="67" height="126" uuid="9663d0c9-91c8-4278-9649-1ab5143db298"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[基本案情]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="562" width="67" height="54" uuid="6e02b060-3f92-4716-9d41-18308c663817"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[承办部门
+审核]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="616" width="66" height="52" uuid="5f44dcf5-9658-441c-8d12-a40ae6dae5b7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[法制部门
+审核]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="668" width="66" height="52" uuid="893b6ab6-0043-4fc4-8fd3-8f5e2360ba24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[主管领导
+审核]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="98" width="474" height="1" uuid="989204d1-7d9e-499c-94dd-828a65025f63"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="224" width="474" height="1" uuid="1ee4a592-d54d-45f5-863f-2b9e5872c3b4"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="307" width="475" height="1" uuid="58c5fbb0-a60f-488a-bf43-031f80417808"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="505" width="475" height="1" uuid="b883d355-77e8-4039-89e5-528b1ea44ed6"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="562" width="475" height="1" uuid="471e961f-5967-4446-8f8e-da58f771a43a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="616" width="474" height="1" uuid="8625cfe0-81be-473e-a25a-1a1a78732397"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="668" width="475" height="1" uuid="1e61e9c6-96f9-489f-950f-20866c693012"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="721" width="475" height="1" uuid="875641f1-d0b0-4c9e-81a4-88df0ac068e2"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="225" width="67" height="83" uuid="eecd2264-b193-4cac-8182-cde1e4abc828"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[违法行为等次]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="308" width="67" height="197" uuid="139fe7da-aef5-447a-95f2-306a455ed7ff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[法律依据]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="506" width="67" height="56" uuid="97c1feba-361d-4758-81aa-c99fcd68ef06"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[承办人
+建议]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="75" width="67" height="23" uuid="3c61a485-f49c-46c1-9029-30f3fa4bea30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[当事人]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="68" y="76" width="407" height="23" uuid="7f440503-bade-44cf-9b91-b104a337e5e4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{client}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="68" y="100" width="407" height="125" uuid="cde24e81-6478-4e7a-a0ba-1f61313914e9"/>
+				<textElement>
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{basicCase}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="68" y="308" width="407" height="197" uuid="d321d37b-c1e8-4524-af50-bd7f1255ac1e"/>
+				<textElement>
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{legalBasis}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="68" y="225" width="407" height="83" uuid="af401797-4b18-4382-80f9-7bac4cc2a9ef"/>
+				<textElement>
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{illegalGrade}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="178" y="596" width="111" height="20" uuid="1a11018b-294a-4778-9cd5-4bf4355d203a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{captainDateStr} == null ? "" : $F{captainName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="78" y="617" width="387" height="31" uuid="08514a57-26d6-4095-910c-65a69827d56c"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{legalDateStr} == null ? "" : "事实清楚，证据确凿，适用法规条文恰当，罚款金额符合自由载量阶次制度规定"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="178" y="700" width="111" height="20" uuid="1d49eff4-b176-4ea9-8041-4187923b6289"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bigCaptainDateStr} == null ? "" : $F{bigCaptainName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="335" y="596" width="140" height="20" uuid="681f46bc-371a-4a69-8734-014a51a5302f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{captainDateStr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="78" y="563" width="397" height="20" uuid="5e874b81-7982-40ef-805b-e19559127743"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{captainDateStr} == null ? "" : "同意承办意见"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="178" y="649" width="111" height="20" uuid="87661f1a-9c02-4fa1-b122-ab8968f977ad"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{legalDateStr} == null ? "" : $F{legalName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="335" y="648" width="140" height="20" uuid="f0db50cf-5e04-49b3-8ff1-6bc9324a86c5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{legalDateStr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="335" y="700" width="140" height="20" uuid="a140b122-20cd-4e60-8065-d9bc71931eee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bigCaptainDateStr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="78" y="668" width="397" height="20" uuid="063937a8-3d2f-41cb-b5aa-87cd9c853ab4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bigCaptainDateStr} == null ? "" : "同意承办意见"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="335" y="542" width="140" height="20" uuid="a2bd2f03-9fe9-4b84-953c-1a84b25d6f0b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hostDateStr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="178" y="543" width="157" height="20" uuid="84cf2371-d9ff-43ce-b9bf-405be880ea53"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hostDateStr} == null ? "" : (($F{sponsorName} == null ? "" :$F{sponsorName})+"  "+($F{assistantHandleName} == null ? "" : $F{assistantHandleName}))]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="78" y="506" width="397" height="20" uuid="77da9ae2-03a6-4e29-b051-d2c895ad1ab0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hostDateStr} == null ? "" :$F{hostSuggest}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

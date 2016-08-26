@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.future.ssh.domain">
+<class name="Personnel" table="a_personnel">
+
+	<id name="id" type="long" column="id">
+		 <generator class="native"/>
+	</id>
+	<property name="name" type="string" column="name" />
+    <property name="account" type="string" column="account"  />
+    <property name="password" type="string" column="password"  />
+    <property name="gender" type="string" column="gender"  />
+    <property name="telephone" type="string" column="telephone"  />
+    <property name="flag" type="string">
+    </property>
+    
+   <!--roles属行，表达的是本类与Role类多对多的关系  -->
+      <set name="roles" table="t_personnel_role" lazy="false">
+          <key column="personnel_id"/>
+          <many-to-many class="Role" column="role_id" />
+      </set>
+    
+    <!-- squadron属性，本来与Squadron一多对一的关系 -->
+    <many-to-one name="squadron" class="Squadron" column="squadron_id"  lazy="false"></many-to-one> 
+
+    <!--accreditation属性，本类与Accreditation 一对多的关系 -->
+    <set name="accreditation">
+       <key column="personnel_id"></key>
+       <one-to-many class="Accreditation"/>
+    </set>
+    
+</class> 
+</hibernate-mapping>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.future.ssh.domain">
+<class name="PTable" table="a_pTable">
+
+	<id name="id" type="long" column="id">
+		 <generator class="native"/>
+	</id>
+	
+	 <property name="basicCase" type="text" length="65536"></property>
+     <property name="illegalGrade" type="text" length="65536"></property>
+     <property name="factAndSuggestion" type="text" length="65536"></property>
+     <property name="caseLevel" type="text" ></property>
+     <property name="legalFlag" type="boolean"></property>
+     <property name="indCommFlag" type="boolean"></property>
+     <property name="caseRevCommFlag" type="boolean"></property>
+     
+      <property name="depLeaderFlag" type="boolean"></property>
+     <property name="hostFlag" type="boolean"></property>
+     <property name="joinFlag" type="boolean"></property>
+     <property name="chiefFlag" type="boolean"></property>
+     <property name="printFlag" type="boolean"></property>
+     <property name="captainFlag" type="boolean"></property>
+     <property name="client" type="string"></property>
+	 <property name="ICOrCRCDecide" type="text" length="10000"></property>
+     <property name="legalBasis" type="text" length="65536"></property>
+  <property name="depLeaderSuggest" type="text" length="65536"></property>
+    <property name="captainName" type="text" ></property>
+	<property name="legalName" type="text" ></property>
+	<property name="bigCaptainName" type="text" ></property>
+     <property name="indCommNames" type="text"></property>
+     <property name="caseRevCommNames" type="text"></property>
+     
+      <property name="depLeaderName" type="text" ></property>
+      
+      <property name="depLeaderDate" type="timestamp"></property>
+      
+ 	<property name="legGuideSuggest" type="text" length="65536"></property>
+ 	
+	<property name="captainSuggest" type="text" length="65536"></property>
+	<property name="legSuggest" type="text" length="65536"></property>
+	<property name="bigCaptainSuggest" type="text" length="65536"></property>
+	
+	<property name="ICSuggest" type="text" length="65536"></property>
+	<property name="CRCSuggest" type="text" length="65536"></property>
+	<property name="hostDate" type="timestamp"></property>
+	<property name="captainDate" type="timestamp"></property>
+	<property name="legalDate" type="timestamp"></property>
+	<property name="bigCaptainDate" type="timestamp"></property>
+    
+     
+     <property name="proofServicePTFlag" type="boolean"></property>
+     <property name="finalReportFlag" type="boolean"></property>
+     <property name="recordSheetFlag" type="boolean"></property>
+    
+    
+    <set name="proofServicePT">
+	  <key column="proofServicePT_id"></key>
+	  <one-to-many class="Document"/>
+	</set>
+	<set name="finalReport">
+	  <key column="finalReport_id"></key>
+	  <one-to-many class="Document"/>
+	</set>
+	<set name="recordSheet">
+	  <key column="recordSheet_id"></key>
+	  <one-to-many class="Document"/>
+	</set>
+	
+	
+     <!-- summary属性。本类Summary的多对一的关系 -->
+     <many-to-one name="summary" column="summary_id" class="Summary"></many-to-one>
+     
+     <!--accreditation属性，本类与Accreditation的一对一的关系  -->
+     <many-to-one name="accreditation" column="accreditation_id" class="Accreditation" unique="true"></many-to-one>
+
+</class> 
+</hibernate-mapping>

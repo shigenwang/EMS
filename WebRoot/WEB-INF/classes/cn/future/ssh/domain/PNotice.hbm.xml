@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.future.ssh.domain">
+<class name="PNotice" table="a_pNotice">
+
+	<id name="id" type="long" column="id">
+		 <generator class="native"/>
+	</id>
+	 <property name="illegalContent" type="text" length="65536"></property>
+	 <property name="otherpenaltyInf" type="string"></property>
+	 <property name="fines" type="string"></property>
+	 <property name="busLicense" type="string"></property>
+	 <property name="sumitDate" type="int"></property>
+	 <property name="date" type="timestamp"></property>
+	 <property name="legalFlag" type="boolean"></property>
+	 <property name="printFlag" type="boolean"></property>
+	 <property name="legalSuggest" type="text" length="65536"></property>
+	 
+	<!--  <property name="legalName" type="string"></property> -->
+	  <property name="paragraph1" type="text"  length="65536"></property>
+	  <property name="paragraph2" type="text"  length="65536"></property>
+	  <property name="paragraph3" type="text"  length="65536"></property>
+	  <property name="paragraph4" type="text"  length="65536"></property>
+	  <property name="paragraph5" type="text"  length="65536"></property>
+	  
+	 <many-to-one name="pdfDocument"   unique="true" class="PDFDocument" column="pdfDocument_id"></many-to-one>   
+	 <!-- accreditation属性，本类与Accreditation的一对一的关系 -->
+     <many-to-one name="accreditation" class="Accreditation" column="accreditation_id" unique="true"></many-to-one>
+     
+     <!--illegalStyles属性，本类与IllegalStyle的 多对一的关系 -->
+     <many-to-one name="illegalStyles" class="IllegalStyle" column="illegalStyles_id"></many-to-one>
+     
+     <!-- summary属性，本类与Summary的 多对一的关系-->
+     <many-to-one name="summary" class="Summary" column="summary_id"></many-to-one>
+
+</class> 
+</hibernate-mapping>

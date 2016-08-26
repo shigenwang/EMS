@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		                    http://www.springframework.org/schema/context 
+		                    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		                    http://www.springframework.org/schema/tx 
+		                    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		                    http://www.springframework.org/schema/aop 
+		                    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	 
+	
+	
+	<bean id="personnelService" class="cn.future.ssh.service.impl.PersonnelServiceImpl">
+		<property name="personnelDao" ref="personnelDao"></property>
+	</bean>
+	<bean id="queryService" class="cn.future.ssh.service.impl.QueryServiceImpl">
+	</bean>
+	<bean id="login2Service" class="cn.future.ssh.service.impl.Login2ServiceImpl">
+		<property name="personnelDao" ref="personnelDao"></property>
+		<property name="squadronDao" ref="squadronDao"></property>
+	</bean>
+	<bean id="accreditationService" class="cn.future.ssh.service.impl.AccreditationServiceImpl">
+		<property name="personnelService" ref="personnelService"></property>
+		<property name="accreditationDao" ref="accreditationDao"></property>
+		<property name="repositoryService" ref="repositoryService"></property>
+		<property name="runtimeService" ref="runtimeService"></property>
+		<property name="taskService" ref="taskService"></property>
+		<property name="formService" ref="formService"></property>
+		<property name="historyService" ref="historyService"></property>
+		<property name="documentService" ref="documentService"></property>
+		<property name="squadronService" ref="squadronService"></property>
+		<property name="aboutTaskService" ref="aboutTaskService"></property>
+	</bean>
+	<bean id="aboutTaskService" class="cn.future.ssh.service.impl.AboutTaskServiceImpl">
+		<property name="formService" ref="formService"></property>
+		<property name="repositoryService" ref="repositoryService"></property>
+		<property name="taskService" ref="taskService"></property>
+		<property name="runtimeService" ref="runtimeService"></property>
+		<property name="historyService" ref="historyService"></property>
+		<property name="accreditationService" ref="accreditationService"></property>
+		
+	</bean>
+	
+	<bean id="pNoticeService" class="cn.future.ssh.service.impl.PNoticeServiceImpl">
+		<property name="runtimeService" ref="runtimeService"></property>
+		<property name="taskService" ref="taskService"></property>
+		<property name="pNoticeDao" ref="pNoticeDao"></property>
+		<property name="illegalStyleService" ref="illegalStyleService"></property>
+		<property name="accreditationService" ref="accreditationService"></property>
+		<property name="pdfDocumentService" ref="pdfDocumentService"></property>
+	</bean>
+	
+	<bean id="pTableService" class="cn.future.ssh.service.impl.PTableServiceImpl">
+		<property name="runtimeService" ref="runtimeService"></property>
+		<property name="taskService" ref="taskService"></property>
+		<property name="pTableDao" ref="pTableDao"></property>
+		<property name="aboutTaskService" ref="aboutTaskService"></property>
+		<property name="accreditationService" ref="accreditationService"></property>
+		<property name="documentService" ref="documentService"></property>
+	</bean>
+	
+	<bean id="pDecideService" class="cn.future.ssh.service.impl.PDecideServiceImpl">
+		<property name="runtimeService" ref="runtimeService"></property>
+		<property name="taskService" ref="taskService"></property>
+		<property name="pDecideDao" ref="pDecideDao"></property>
+		<property name="accreditationService" ref="accreditationService"></property>
+		<property name="pdfDocumentService" ref="pdfDocumentService"></property>
+	</bean>
+	
+	<bean id="pClosingReportService" class="cn.future.ssh.service.impl.PClosingReportServiceImpl">
+		<property name="runtimeService" ref="runtimeService"></property>
+		<property name="taskService" ref="taskService"></property>
+		<property name="pClosingReportDao" ref="pClosingReportDao"></property>
+		<property name="accreditationService" ref="accreditationService"></property>
+		<property name="aboutTaskService" ref="aboutTaskService"></property>
+		<property name="documentService" ref="documentService"></property>
+	</bean>
+	
+	<bean id="summaryService" class="cn.future.ssh.service.impl.SummaryServiceImpl">
+		<property name="summaryDao" ref="summaryDao"></property>
+	</bean>
+	
+	<bean id="squadronService" class="cn.future.ssh.service.impl.SquadronServiceImpl">
+		<property name="squadronDao" ref="squadronDao"></property>
+	</bean>
+	
+	<bean id="caseSourceService" class="cn.future.ssh.service.impl.CaseSourceServiceImpl">
+		<property name="caseSourceDao" ref="caseSourceDao"></property>
+	</bean>
+	
+	<bean id="roleService" class="cn.future.ssh.service.impl.RoleServiceImpl">
+	    <property name="roleDao" ref="roleDao"></property>
+	</bean>
+	<bean id="illegalStyleService" class="cn.future.ssh.service.impl.IllegalStyleServiceImpl">
+	    <property name="illegalStyleDao" ref="illegalStyleDao"></property>
+	</bean>
+	<bean id="documentService" class="cn.future.ssh.service.impl.DocumentServiceImpl">
+		<property name="documentDao" ref="documentDao"></property>
+	</bean>
+	<bean id="pdfDocumentService" class="cn.future.ssh.service.impl.PDFDocumentServiceImpl">
+		<property name="pdfDocumentDao" ref="pdfDocumentDao"></property>
+	</bean>
+	
+</beans>

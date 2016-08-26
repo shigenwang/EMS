@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportnight" language="groovy" pageWidth="595" pageHeight="842" columnWidth="475" leftMargin="60" rightMargin="60" topMargin="40" bottomMargin="55" uuid="69afd6ae-a05a-421e-bf42-948e365e167e">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="105"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="PDecideId" class="java.lang.Long">
+		<fieldDescription><![CDATA[PDecideId]]></fieldDescription>
+	</field>
+	<field name="actualFines" class="java.lang.Integer">
+		<fieldDescription><![CDATA[actualFines]]></fieldDescription>
+	</field>
+	<field name="adreconAddress1" class="java.lang.String">
+		<fieldDescription><![CDATA[adreconAddress1]]></fieldDescription>
+	</field>
+	<field name="adreconAddress2" class="java.lang.String">
+		<fieldDescription><![CDATA[adreconAddress2]]></fieldDescription>
+	</field>
+	<field name="adreconTimeLimit" class="java.lang.Integer">
+		<fieldDescription><![CDATA[adreconTimeLimit]]></fieldDescription>
+	</field>
+	<field name="bankAccount" class="java.lang.String">
+		<fieldDescription><![CDATA[bankAccount]]></fieldDescription>
+	</field>
+	<field name="caseIntroduction" class="java.lang.String">
+		<fieldDescription><![CDATA[caseIntroduction]]></fieldDescription>
+	</field>
+	<field name="caseLevel" class="java.lang.String">
+		<fieldDescription><![CDATA[caseLevel]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="date" class="java.util.Date">
+		<fieldDescription><![CDATA[date]]></fieldDescription>
+	</field>
+	<field name="dateStr" class="java.lang.String">
+		<fieldDescription><![CDATA[dateStr]]></fieldDescription>
+	</field>
+	<field name="legalSuggest" class="java.lang.String">
+		<fieldDescription><![CDATA[legalSuggest]]></fieldDescription>
+	</field>
+	<field name="outCome" class="java.lang.String">
+		<fieldDescription><![CDATA[outCome]]></fieldDescription>
+	</field>
+	<field name="paragraph1" class="java.lang.String">
+		<fieldDescription><![CDATA[paragraph1]]></fieldDescription>
+	</field>
+	<field name="paragraph2" class="java.lang.String">
+		<fieldDescription><![CDATA[paragraph2]]></fieldDescription>
+	</field>
+	<field name="paragraph3" class="java.lang.String">
+		<fieldDescription><![CDATA[paragraph3]]></fieldDescription>
+	</field>
+	<field name="paragraph4" class="java.lang.String">
+		<fieldDescription><![CDATA[paragraph4]]></fieldDescription>
+	</field>
+	<field name="paragraph5" class="java.lang.String">
+		<fieldDescription><![CDATA[paragraph5]]></fieldDescription>
+	</field>
+	<field name="paragraph6" class="java.lang.String">
+		<fieldDescription><![CDATA[paragraph6]]></fieldDescription>
+	</field>
+	<field name="paragraph7" class="java.lang.String">
+		<fieldDescription><![CDATA[paragraph7]]></fieldDescription>
+	</field>
+	<field name="paragraph8" class="java.lang.String">
+		<fieldDescription><![CDATA[paragraph8]]></fieldDescription>
+	</field>
+	<field name="payBank" class="java.lang.String">
+		<fieldDescription><![CDATA[payBank]]></fieldDescription>
+	</field>
+	<field name="taskId" class="java.lang.String">
+		<fieldDescription><![CDATA[taskId]]></fieldDescription>
+	</field>
+	<field name="yearNum" class="java.lang.String">
+		<fieldDescription><![CDATA[yearNum]]></fieldDescription>
+	</field>
+	<field name="PDecideId_1" class="java.lang.Long">
+		<fieldDescription><![CDATA[PDecideId]]></fieldDescription>
+	</field>
+	<field name="PDecideId_2" class="java.lang.Long">
+		<fieldDescription><![CDATA[PDecideId]]></fieldDescription>
+	</field>
+	<field name="accreditationId" class="java.lang.Long">
+		<fieldDescription><![CDATA[accreditationId]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="747" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="2" y="69" width="474" height="24" uuid="89922383-c9a7-4469-90ec-2276c56e7823"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="黑体" size="14" pdfFontName="simhei.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["（中原行执）罚决字【 "+ ($F{yearNum} == null ? "" : $F{yearNum}) +" 】第 " + ($F{accreditationId} == null ? "" : $F{accreditationId})+ " 号"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="38" width="476" height="31" uuid="ee491e8c-ad78-4d80-ba2a-860e0da511da"/>
+				<textElement textAlignment="Center">
+					<font fontName="黑体" size="18" isBold="false" pdfFontName="simhei.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[行 政 处 罚 决 定 书]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="0" width="475" height="38" uuid="ef042d5e-f18f-4566-8bd9-5bee00179fb1"/>
+				<textElement textAlignment="Center">
+					<font fontName="黑体" size="24" isBold="false" pdfFontName="simhei.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[郑州市中原区城市管理行政执法局]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="114" width="475" height="1" uuid="7b876a18-97fb-41f6-8331-55ad133f2004"/>
+				<graphicElement>
+					<pen lineWidth="1.75" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="724" width="475" height="1" uuid="875641f1-d0b0-4c9e-81a4-88df0ac068e2"/>
+				<graphicElement>
+					<pen lineWidth="1.75" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="1" y="727" width="475" height="20" uuid="fb5302d1-0101-42e1-bfa8-a65a1bdf3d97"/>
+				<textElement>
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[本文书一式三份，分别为送达当事人、留作申请强制执行、存档。]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="679" width="233" height="20" uuid="3edfb005-632c-4005-9700-b43298cbd7b7"/>
+				<textElement textAlignment="Right">
+					<font fontName="仿宋" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[郑州市中原区城市管理行政执法局]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="118" width="474" height="551" uuid="47cc69dd-615a-40fb-909c-d9616b7be912"/>
+				<textElement>
+					<font fontName="仿宋" size="12" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paragraph1}+$F{paragraph2}+$F{paragraph3}+$F{paragraph4}+$F{paragraph5}+$F{paragraph7}+$F{paragraph8}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="239" y="699" width="233" height="20" uuid="1731d843-3a08-487c-a06b-e72a131022b6"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="仿宋" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateStr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

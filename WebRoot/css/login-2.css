@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+.head-login{
+	height:60px;
+	color:#FFF;
+	-moz-border-radius:5px 5px 0px 0px;
+	border-radius:5px 5px 0px 0px;
+	background-color:#639AD2;
+	font-family:"幼圆","黑体";
+		
+}
+.head-login h4{ line-height:40px;}
+.head-con{
+	padding-bottom:10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	border-radius:10px 10px 10px 10px ;
+	background-color: rgba(150, 150, 150, 0.04);
+	box-shadow: 0 0 6px #CFC3C3; 
+}
+.btn-de {
+  color:#FFF;
+  background-color: #639AD2;
+ /* border-color: #ccc;*/
+}
+.body-login{ 
+   margin: 150px auto 0 auto;
+   
+ }

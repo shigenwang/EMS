@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.future.ssh.domain">
+<class name="Document" table="a_document">
+
+	<id name="id" type="long" column="id">
+		 <generator class="native"/>
+	</id>
+	<property name="imageName" type="string"/>
+	
+
+    <!-- squadron属性，本来与Squadron一多对一的关系 -->
+    <many-to-one name="accreditation" class="Accreditation" column="accreditation_id"  ></many-to-one> 
+ </class> 
+</hibernate-mapping>

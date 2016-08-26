@@ -1,0 +1,9 @@
+在jasper此文件夹里的文件都是案件审批时所用到报表：
+
+1、案件立案审批表：          accreditationReport.jasper
+2、行政处罚事先告知书：   pNoticeReport.jasper
+3、案件处理审批表：          pTableReport.jasper
+4、行政处罚决定书：          pDecideReport.jasper
+5、行政处罚案件报告：       pClosingReport.jasper
+6、案审委案件审批决定书：caseReCommit.jasper
+7、业委会案件审批决定书：induAuthor.jasper

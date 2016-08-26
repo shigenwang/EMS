@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.future.ssh.domain">
+<class name="Accreditation" table="a_accreditation">
+
+	<id name="id" type="long" column="id">
+		 <generator class="native"/>
+	</id>
+	<property name="unitName" type="string"></property>
+	<property name="leRepresentative" type="string"></property>
+	<property name="unitTel" type="string"></property>
+	<property name="unitAddress" type="string"></property>
+	<property name="personnelName" type="string"></property>
+	<property name="baseCase" type="text" length="65536"></property>
+	
+	<property name="sex" type="string"></property>
+	<property name="userAge" type="int"></property>
+	<property name="userAddress" type="string"></property>
+	
+	<property name="legGuideSuggest" type="text" length="65536"></property>
+	
+	<property name="captainSuggest" type="text" length="65536"></property>
+	<property name="legSuggest" type="text" length="65536"></property>
+	<property name="bigCaptainSuggest" type="text" length="65536"></property>
+	
+	<property name="captainName" type="text" ></property>
+	<property name="legalName" type="text" ></property>
+	<property name="bigCaptainName" type="text" ></property>
+	
+	<property name="hostDate" type="timestamp"></property>
+	<property name="captainDate" type="timestamp"></property>
+	<property name="legalDate" type="timestamp"></property>
+	<property name="bigCaptainDate" type="timestamp"></property>
+	
+	<property name="idNumber" type="string"></property>
+	<property name="userTel" type="string"></property>
+	<property name="hostFlag" type="boolean"></property>
+	<property name="joinFlag" type="boolean"></property>
+	<property name="chiefFlag" type="boolean"></property>
+	<property name="captainFlag" type="boolean"></property>
+	<property name="printFlag" type="boolean"></property>
+	<property name="legalFlag" type="boolean"></property>
+	
+	<property name="idCardFlag" type="boolean"></property>
+	<property name="enforceCardFlag" type="boolean"></property>
+	<property name="orderChangeNoticeFlag" type="boolean"></property>
+	<property name="recordInquestFlag" type="boolean"></property>
+	<property name="sitePhotosFlag" type="boolean"></property>
+	<property name="recordInvFlag" type="boolean"></property>
+	<property name="recordPaperFlag" type="boolean"></property>
+	
+	<property name="businessLicenseFlag" type="boolean"></property>
+	
+	<!--caseSource属性，本类与CaseSource的多对一的关系  -->
+	<many-to-one name="caseSource" class="CaseSource" column="caseSource_id"/>
+	<!--summary属性，本类与Summary的一对一的关系  -->
+	<many-to-one name="summary" class="Summary" column="summary_id"></many-to-one>
+	
+	<!-- squadron属性，本类与Squadron的多对一的关系 -->
+	<many-to-one name="squadron" class="Squadron" column="squadron_id"></many-to-one>
+	
+	<many-to-one name="pNotice"   unique="true" class="PNotice" column="pNotice_id"></many-to-one>   
+	<many-to-one  name="pTable"  unique="true" class="PTable" column="pTable_id"></many-to-one>
+	<many-to-one  name="pDecide"   unique="true" class="PDecide" column="pDecide_id"></many-to-one>  
+	<many-to-one  name="pClosingReport"   unique="true" class="PClosingReport" column="pClosingReport_id"></many-to-one>  
+	
+	<many-to-one  name="sponsor"    unique="false" class="Personnel" column="sponsor_id"></many-to-one> 
+	<many-to-one  name="assistantHandle"   unique="false" class="Personnel" column="assistantHandle_id" ></many-to-one>   
+	
+	
+   	<many-to-one  name="idCard"   unique="true" class="Document" column="idCard_id" ></many-to-one>  
+   	
+   	<set name="enforceCard">
+	  <key column="enforceCard_id"></key>
+	  <one-to-many class="Document"/>
+	</set>
+	 	<set name="orderChangeNotice">
+	  <key column="orderChangeNotice_id"></key>
+	  <one-to-many class="Document"/>
+	</set>
+	 	<set name="recordInquest">
+	  <key column="recordInquest_id"></key>
+	  <one-to-many class="Document"/>
+	</set>
+	 	<set name="sitePhotos">
+	  <key column="sitePhotos_id"></key>
+	  <one-to-many class="Document"/>
+	</set>
+	 	<set name="recordInv">
+	  <key column="recordInv_id"></key>
+	  <one-to-many class="Document"/>
+	</set>
+	 	<set name="recordPaper">
+	  <key column="recordPaper_id"></key>
+	  <one-to-many class="Document"/>
+	</set>
+   	
+   	 <many-to-one  name="businessLicense"   unique="true" class="Document" column="businessLicense_id" ></many-to-one> 
+</class> 
+</hibernate-mapping>

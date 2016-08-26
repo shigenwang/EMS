@@ -1,0 +1,184 @@
+@charset "utf-8";
+*{margin:0;padding:0;list-style:none;border:none;}
+body{/*font-size:12px;*/ text-overflow:ellipsis;}
+a{/*color:#666;*/text-decoration:none;}	
+/*客服代码部分*/
+.qqserver .qqserver-header:after,.qqserver .qqserver-header:before,.qqserver li a:after,.qqserver li a:before{
+	display:table;content:' ';
+	}
+.qqserver .qqserver-header:after,.qqserver li a:after{
+	clear:both;
+	}
+.qqserver .qqserver-header,.qqserver li a,.tabs,.user-main,.view-category,.view-category-list>li{*zoom:1}
+.qqserver{
+	position:fixed;
+	top:18%;
+	right:0;
+	height:209px;
+	
+	margin-top:-104px;
+	}
+.qqserver.unfold .qqserver-body{
+	width:255;
+	right:0;
+	}
+.qqserver .qqserver-body{
+	position:absolute;
+	width:250x;
+	padding:12px 10px;
+	-webkit-transition:.3s cubic-bezier(.19,1,.22,1);
+	-o-transition:.3s cubic-bezier(.19,1,.22,1);
+	transition:.3s cubic-bezier(.19,1,.22,1);
+	;border-radius:4px;
+	background:#f4f7fa;
+	background-color:#F0F1F2;
+	border:1px solid #69C;
+	}
+.qqserver .qqserver_fold{
+	/*border:2px solid blue;*/
+	position:absolute;
+	right:0;
+/*	padding:14px 7px;*/
+	cursor:pointer;
+	border-top-left-radius:4px;
+	border-bottom-left-radius:4px;
+	/*background:#70ca5d*/
+	}
+.qqserver .qqserver-header{
+	padding-bottom:10px;
+	padding-left:6px;
+	border-bottom:1px dashed #d1d4cc;
+	}
+.qqserver .qqserver-header *{
+	float:left;
+	font-size:14px;
+	}
+.qqserver .qqserver_arrow{
+	margin-top:-1px;
+	margin-left:200px;
+	cursor:pointer;
+/*	border:1px solid blue;*/
+	}
+.qqserver li{
+	margin-top:4px;
+	font-size:12px;
+	/*border:1px solid #000;*/
+	color:#f00;}
+
+
+/*.wenzi a{border:2px solid #00F;color:#F00;}*/
+.qqserver li a{
+	display: block;
+	padding: 6px 12px 4px;
+	margin-top: -25px;
+	margin-left: 145px;
+	/* border:1px solid red;*/
+	}
+.qqserver li a div{
+	font-size:10px;
+	float:left;
+	margin-right:11px;
+	color:#697466;
+	white-space: nowrap;
+	width:101px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	}
+.qqserver li a div{
+	font-size:10px;
+	float:left;
+	margin-right:11px;
+	color:#697466;
+    white-space: nowrap;
+	width:101px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color:#F00;
+	}
+.qqserver li a span{
+	font-size:10px;
+	line-height:18px;
+	float:left;
+	text-indent:4px;
+	color:#000;
+	}
+.qqserver li a span.qqserver-service-alert{
+	font-weight:400;
+	display:block;
+	}
+/*.qqserver li a:hover{text-decoration:none;/*border-radius:4px;background:#eaebe9;}*/
+.qqserver li a:hover div{
+	color:#62b651;
+	}
+.qqserver .qqserver-footer{
+	margin-top:10px;
+	padding-top:14px;
+	padding-bottom:14px;
+	padding-left:11px;
+	border-top:1px dashed #d1d4cc;
+	}
+.qqserver .qqserver-footer .text-primary{
+	color:#70CA5D;
+	font-size:14px;
+	}
+.qqserver .qqserver_icon-alert{
+	display:inline-block;
+	margin-right:10px;
+	vertical-align:-3px;
+	*display:inline;*zoom:1;
+	*vertical-align:-1px;
+	}
+.qqserver-header div{
+	width:130px;
+	/*background-image:url(../../../%E6%83%A0%E6%B5%8E%E5%8C%BA%E7%AB%99%E7%82%B9/backgrounds.32.png);*/
+	background-position:-419px -80px;
+	margin-left:0px;
+	}
+.qqserver_icon-alert{
+	width:16px;
+	height:14px;
+	background-image:url(../images/alert/backgrounds.32.png);
+	background-position:-595px -85px;
+	}
+.qqserver li a span{
+	width:30px;
+	height:23px;
+	/*background-image:url(../../../%E6%83%A0%E6%B5%8E%E5%8C%BA%E7%AB%99%E7%82%B9/backgrounds.32.png);*/
+	background-position:-265px 0;
+	}
+.qqserver li a .qqserver-service-alert{
+	width:30px;
+	height:22px;
+	background-image:url(../images/alert/backgrounds.32.png);
+	background-position:-342px 0;
+	}
+	.qqserver_fold div{
+		/*border:2px solid #0FF;*/
+		width:20px;height:46px;
+		
+		background-image:url(../images/alert/backgrounds.32.png);
+		background-position:0 0;
+		}
+	.qqserver_fold:hover div{
+		width:20px;
+		height:46px;
+		
+		background-image:url(../images/alert/backgrounds.32.png);
+		/*background-position:-27px 0*/}
+.qqserver_arrow{
+	margin-left:200px;
+	width:9px;
+	height:15px;  
+	background-image:url(../images/alert/chushi.png);
+    /*margin-left:5px;background-position:-430px 0*/}
+.qqserver_arrow:hover{
+	margin-left:200px;
+	width:18px;
+	height:18px;
+	background-image:url(../images/alert/yincang.png);
+	/*background-position:-435px -38px*/*/
+	}
+
+
+
+

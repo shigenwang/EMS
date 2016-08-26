@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <!-- 配置模式为开发模式，自动加载struts.xml和显示错误提示信息 -->
+    <constant name="struts.devMode" value="true" />
+    <!-- 设置页面主题为简单主题，去掉struts2开发提供的样式 -->
+    <constant name="struts.ui.theme" value="simple" />
+
+    
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" /> 
+
+
+    <!-- 修改上传文件的最大上限 -->
+	<constant name="struts.multipart.maxSize" value="1000000000"/> 
+
+    <package name="default" namespace="/" extends="struts-default,jasperreports-default">
+     
+         <result-types>
+          <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+        </result-types>
+        
+		<!-- 拦截器设置 -->
+		 <interceptors>
+			<!-- 定义一个全局登录权限拦截器 -->
+			<interceptor name="checkPrivilegeInterceptor" class="cn.future.ssh.interceptor.CheckPrivilegeInterceptor" />
+	     	<!-- 定义一个拦截器栈 -->
+			<interceptor-stack name="systemStack">
+			  <!-- 定义拦截器栈中包含 default-stack 拦截器栈 -->
+				<interceptor-ref name="defaultStack" />
+				<!-- 定义拦截器栈中包含 loginInterceptor 拦截器 -->
+				<interceptor-ref name="checkPrivilegeInterceptor">
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+	<!-- 将自定义的拦截器栈配制成默认拦截器栈 -->
+			<!-- <default-interceptor-ref name="systemStack" />  -->
+		
+    	<!-- 全局结果视图 -->
+        <global-results>
+    		<result name="loginUI" >/login.jsp</result>
+    		<result name="error">/WEB-INF/error.jsp</result>
+    	</global-results>
+    	 
+    	
+    	<action name="pClosingReportAction_*" class="pClosingReportAction" method="{1}">
+    		<result name="inputPClosingReportUI">WEB-INF/jsp/pClosingReport/inputPClosingReport.jsp</result>
+    		<result name="listTask" type="redirectAction">
+    			<param name="actionName">aboutTaskAction_findTaskListById</param>
+            </result>
+             <result name="auditDocumentUI" >WEB-INF/jsp/aboutTask/auditDocumentUI.jsp</result>
+    		<result name="taskForm">WEB-INF/jsp/pClosingReport/audit.jsp</result>
+    		 <result name="input">WEB-INF/error.jsp</result>
+    		<result name="signature" type="redirectAction">
+    			<param name="actionName">/${#singnatureUrl}</param>
+            </result>
+             <result name="guideUI">WEB-INF/jsp/pClosingReport/guideUI.jsp</result> 
+             <!-- 行政处罚结案打印模块 -->
+		    <result name="PDF" type="jasper">
+				<param name="location">jasper/pClosingReport.jasper</param>
+				<param name="format">PDF</param>
+				<param name="dataSource">pClosingReportBeanList</param>
+		    </result>
+		      <result type="stream">
+    			<!--下载的文件类型  -->
+    			<param name="contentType">application/pdf</param>
+    			<!-- 被下载文件的入口 -->
+    			<param name="inputName">targetFile</param>
+    			<!--指定下载的文件名  -->
+    			<param name="contentDisposition">attachment;filename="${fileName}"</param>
+    			<!--指定下载文件时的缓冲大小  -->
+    			<param name="bufferSize">4096</param>
+    		</result>
+		    <interceptor-ref name="systemStack"></interceptor-ref>
+    	</action>
+    	
+    	<action name="pDecideAction_*" class="pDecideAction" method="{1}">
+    		<result name="inputPDecideUI">WEB-INF/jsp/pDecide/inputPDecide.jsp</result>
+    		<result name="listTask" type="redirectAction">
+    			<param name="actionName">aboutTaskAction_findTaskListById</param>
+            </result>
+    		<result name="taskForm">WEB-INF/jsp/pDecide/audit.jsp</result>
+    		
+    		<result name="signature" type="redirectAction">
+    			<param name="actionName">/${#singnatureUrl}</param>
+            </result>
+            <!-- 行政处罚决定书打印模块 -->
+		    <result name="PDF" type="jasper">
+				<param name="location">jasper/pDecideReport.jasper</param>
+				<param name="format">PDF</param>
+				<param name="dataSource">pDecideBeanList</param>
+		    </result>
+		     <result type="stream">
+    			<!--下载的文件类型  -->
+    			<param name="contentType">application/pdf</param>
+    			<!-- 被下载文件的入口 -->
+    			<param name="inputName">targetFile</param>
+    			<!--指定下载的文件名  -->
+    			<param name="contentDisposition">attachment;filename="${fileName}"</param>
+    			<!--指定下载文件时的缓冲大小  -->
+    			<param name="bufferSize">4096</param>
+    		</result>
+		    <interceptor-ref name="systemStack"></interceptor-ref>
+    	</action>
+    	
+    	<action name="pTableAction_*" class="pTableAction" method="{1}">
+    		<result name="inputPTableUI">WEB-INF/jsp/pTable/inputPTable.jsp</result>
+    		<result name="listTask" type="redirectAction">
+    			<param name="actionName">aboutTaskAction_findTaskListById</param>
+            </result>
+            <result name="auditDocumentUI">WEB-INF/jsp/aboutTask/auditDocumentUI.jsp</result>
+          
+    		<result name="ICAuditUI">WEB-INF/jsp/pTable/ICAuditUI.jsp</result>
+    		<result name="CRAuditCUI">WEB-INF/jsp/pTable/CRCAuditUI.jsp</result>
+    		<result name="taskForm">WEB-INF/jsp/pTable/audit.jsp</result>
+    		<result name="signature" type="redirectAction">
+    			<param name="actionName">/${#singnatureUrl}</param>
+            </result>
+            
+            <result name="guideUI">WEB-INF/jsp/pTable/guideUI.jsp</result> 
+            <!-- 案件处理审批表报表打印模块 -->
+		    <result name="PDF" type="jasper">
+				<param name="location">jasper/pTableReport.jasper</param>
+				<param name="format">PDF</param>
+				<param name="dataSource">pTableBeanList</param>
+		    </result>
+		    <result name="PDF2" type="jasper">
+				<param name="location">jasper/caseReCommit.jasper</param>
+				<param name="format">PDF</param>
+				<param name="dataSource">pTableBeanList</param>
+		    </result>
+		    <result name="PDF3" type="jasper">
+				<param name="location">jasper/induAuthor.jasper</param>
+				<param name="format">PDF</param>
+				<param name="dataSource">pTableBeanList</param>
+		    </result>
+		    <interceptor-ref name="systemStack"></interceptor-ref>
+    	</action>
+    	
+    	<action name="pNoticeAction_*" class="pNoticeAction" method="{1}">
+    		<result name="inputPNoticeUI">WEB-INF/jsp/pNotice/inputPNotice.jsp</result>
+    		<result name="listTask" type="redirectAction">
+    			<param name="actionName">aboutTaskAction_findTaskListById</param>
+            </result>
+    		<result name="taskForm">WEB-INF/jsp/pNotice/audit.jsp</result>
+    		<result name="signature" type="redirectAction">
+    			<param name="actionName">/${#singnatureUrl}</param>
+            </result>
+            <!-- 事先告知书报表打印模块 -->
+		    <result name="PDF" type="jasper">
+				<param name="location">jasper/pNoticeReport.jasper</param>
+				<param name="format">PDF</param>
+				<param name="dataSource">pNoticeBeanList</param>
+		    </result>
+		    <result type="stream">
+    			<!--下载的文件类型  -->
+    			<param name="contentType">application/pdf</param>
+    			<!-- 被下载文件的入口 -->
+    			<param name="inputName">targetFile</param>
+    			<!--指定下载的文件名  -->
+    			<param name="contentDisposition">attachment;filename="${fileName}"</param>
+    			<!--指定下载文件时的缓冲大小  -->
+    			<param name="bufferSize">4096</param>
+    		</result>
+		    <interceptor-ref name="systemStack"></interceptor-ref>
+    	</action>
+    	
+    	<action name="accreditationAction_*" class="accreditationAction" method="{1}">
+    		<result name="inputAccreditationUI">WEB-INF/jsp/accreditation/inputAccreditation.jsp</result>
+    		<result name="submitSuccess" type="redirectAction">
+    			<param name="actionName">aboutTaskAction_findTaskListById</param>
+    		</result> 
+    		
+    		<result name="taskForm">WEB-INF/jsp/accreditation/audit.jsp</result> 
+    		<result name="listTask" type="redirectAction">
+    			<param name="actionName">aboutTaskAction_findTaskListById</param>
+            </result>
+            <result name="bigCaptainSignatureUI">WEB-INF/jsp/accreditation/bigCaptainSignatureUI.jsp</result> 
+             <result name="accreditationHome">WEB-INF/jsp/accreditation/accreditationHome.jsp</result> 
+            <result name="signature" type="redirectAction">
+    			<param name="actionName">/${#singnatureUrl}</param>
+            </result>
+            <result name="guideUI">WEB-INF/jsp/accreditation/guideUI.jsp</result> 
+            <result name="auditDocumentUI" >WEB-INF/jsp/aboutTask/auditDocumentUI.jsp</result>
+             <!-- 案件立案审批表的报表模块-->
+		    <result name="PDF" type="jasper">
+				<param name="location">jasper/accreditationReport.jasper</param>
+				<param name="format">PDF</param>
+				<param name="dataSource">accreditationBeanList</param>
+		    </result>
+		    <interceptor-ref name="systemStack"></interceptor-ref>
+    	</action>
+    	
+    	<action name="aboutTaskAction_*" class="aboutTaskAction" method="{1}">
+    		<result name="list" type="redirectAction">
+        		<param name="actionName">aboutTaskAction_deployHome.action</param>
+        	</result>
+    		<result name="candidateTaskListUI">WEB-INF/jsp/aboutTask/candidateTaskListUI.jsp</result>
+			<result name="taskListUI">WEB-INF/jsp/aboutTask/taskListUI.jsp</result>
+			<result name="image">WEB-INF/jsp/aboutTask/image.jsp</result>  
+			<result name="claimTaskSuccess" type="redirectAction">
+        		<param name="actionName">aboutTaskAction_findTaskListById</param>
+        	</result>  
+        	<result name="viewTaskForm" type="redirectAction">
+        		<param name="actionName">/${#url}</param>
+        	</result>    	
+			<result name="deployHome">WEB-INF/jsp/aboutTask/deploy.jsp</result>
+			
+			
+			<result type="stream">
+    			<!--下载的文件类型  -->
+    			<param name="contentType">application/x-zip-compressed</param>
+    			<!-- 被下载文件的入口 -->
+    			<param name="inputName">targetFile</param>
+    			<!--指定下载的文件名  -->
+    			<param name="contentDisposition">attachment;filename="${fileName}"</param>
+    			<!--指定下载文件时的缓冲大小  -->
+    			<param name="bufferSize">4096</param>
+    		</result>
+			<interceptor-ref name="systemStack"></interceptor-ref>
+    	</action>
+        <!-- <action name="loginAction_*" class="loginAction" method="{1}">
+        	<result name="success" type="redirect">/index.jsp</result>
+        	<result name="welcome">WEB-INF/views/welcome.jsp</result>
+        </action> -->
+       
+        <!-- 最终的登录模块 -->
+        <action name="loginAction2_*" class="loginAction2" method="{1}">
+             <result type="json" name="result"></result>
+             <interceptor-ref name="systemStack"></interceptor-ref>
+        </action>
+        
+        
+        <!-- 行政处罚裁量标准的输入 -->
+        <action name="summaryAction_*" class="summaryAction" method="{1}">
+            <result name="list">WEB-INF/jsp/summary/list.jsp</result>
+        	<result name="saveUI">WEB-INF/jsp/summary/saveUI.jsp</result>
+        	<result name="toList" type="redirectAction">summaryAction_list</result>
+        	<interceptor-ref name="systemStack"></interceptor-ref>
+        </action>
+        
+         <!-- 中队管理模块 -->
+        <action name="squadronAction_*" class="squadronAction" method="{1}">
+            <result name="list">WEB-INF/jsp/squadron/list.jsp</result>
+        	<result name="saveUI">WEB-INF/jsp/squadron/saveUI.jsp</result>
+        	<result name="squadronEditUI">WEB-INF/jsp/squadron/squadronEditUI.jsp</result>
+        	<result name="toList" type="redirectAction">squadronAction_list</result>
+        	<result name="editPasswordUI">WEB-INF/jsp/squadron/editPasswordUI.jsp</result>
+        	<result name="editSuccess">WEB-INF/jsp/squadron/editSuccess.jsp</result>
+        	<result name="editSuccess2">WEB-INF/jsp/squadron/editSuccess2.jsp</result>
+        	<interceptor-ref name="systemStack"></interceptor-ref>
+        </action>
+         <!-- 人员管理模块 -->
+        <action name="personnelAction_*" class="personnelAction" method="{1}">
+            <result name="list">WEB-INF/jsp/personnel/list.jsp</result>
+        	<result name="saveUI">WEB-INF/jsp/personnel/saveUI.jsp</result>
+        	<result name="personnelEditUI">WEB-INF/jsp/personnel/personnelEditUI.jsp</result>
+        	<result name="toList" type="redirectAction">personnelAction_list</result>
+        	<result name="toSaveUI" type="redirectAction">personnelAction_addUI</result>
+        	<result name="editPasswordUI">WEB-INF/jsp/personnel/editPasswordUI.jsp</result>
+        	<result name="editSuccess">WEB-INF/jsp/personnel/editSuccess.jsp</result>
+        	<result name="editSuccess2">WEB-INF/jsp/personnel/editSuccess2.jsp</result>
+        	
+            <interceptor-ref name="systemStack"></interceptor-ref>
+        </action>
+    	<!-- 组织页面 -->
+    	<action name="mainAction_*"  class="mainAction" method="{1}">
+    	    <result name="{1}">WEB-INF/jsp/mainAction/{1}.jsp</result>
+    	    <interceptor-ref name="systemStack"></interceptor-ref>
+    	</action>
+    	<!-- 汇总查询模块 -->
+    	<action name="queryAction_*" class="queryAction" method="{1}">
+            <result name="list">WEB-INF/jsp/query/queryList.jsp</result>
+            <result name="detail">WEB-INF/jsp/query/queryDetail.jsp</result>
+			<interceptor-ref name="systemStack"></interceptor-ref>
+        </action>
+    	<!-- 创建验证码 -->
+    	<action name="createImageAction" class="cn.future.ssh.web.action.CreateImageAction">
+		   <result name="success" type="stream">
+		      <param name="contentType">image/jpeg</param>
+		      <param name="inputName">inputStream</param>  
+		   </result>
+	    </action>
+    </package>
+    
+    <!-- 报表模块 -->
+    <package name="report" namespace="/report" extends="jasperreports-default">
+    	<!-- 下载pdf报表 -->
+    	<action name = "export-*" class = "reportAction" method = "{1}">
+    		<result name = "success"></result>
+    	</action>
+		<action name="preReport" class="reportAction" method= "prePDF">
+		    <result name="success" type="jasper">
+		       <param name="location">jasper/accreditationReport.jasper</param>
+		       <param name="format">PDF</param>
+		       <param name="dataSource">accreditationList</param>
+		    </result>
+		</action>
+    </package>
+</struts>

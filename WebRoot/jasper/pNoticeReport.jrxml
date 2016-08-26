@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportnight" language="groovy" pageWidth="595" pageHeight="842" columnWidth="475" leftMargin="60" rightMargin="60" topMargin="40" bottomMargin="55" uuid="69afd6ae-a05a-421e-bf42-948e365e167e">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="492"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="paragraph1" class="java.lang.String">
+		<fieldDescription><![CDATA[paragraph1]]></fieldDescription>
+	</field>
+	<field name="paragraph2" class="java.lang.String">
+		<fieldDescription><![CDATA[paragraph2]]></fieldDescription>
+	</field>
+	<field name="paragraph3" class="java.lang.String">
+		<fieldDescription><![CDATA[paragraph3]]></fieldDescription>
+	</field>
+	<field name="paragraph4" class="java.lang.String">
+		<fieldDescription><![CDATA[paragraph4]]></fieldDescription>
+	</field>
+	<field name="paragraph5" class="java.lang.String">
+		<fieldDescription><![CDATA[paragraph5]]></fieldDescription>
+	</field>
+	<field name="caseNum" class="java.lang.Long">
+		<fieldDescription><![CDATA[caseNum]]></fieldDescription>
+	</field>
+	<field name="date" class="java.util.Date">
+		<fieldDescription><![CDATA[date]]></fieldDescription>
+	</field>
+	<field name="dateStr" class="java.lang.String">
+		<fieldDescription><![CDATA[dateStr]]></fieldDescription>
+	</field>
+	<field name="yearNum" class="java.lang.String">
+		<fieldDescription><![CDATA[yearNum]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="747" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="1" width="475" height="38" uuid="d9b96ad0-77da-4ff7-a009-93a0d1efec9e"/>
+				<textElement textAlignment="Center">
+					<font fontName="黑体" size="24" isBold="false" pdfFontName="simhei.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[郑州市中原区城市管理行政执法局]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="39" width="475" height="31" uuid="8578e032-4aaa-489e-92a0-97d775eb7949"/>
+				<textElement textAlignment="Center">
+					<font fontName="黑体" size="18" isBold="false" pdfFontName="simhei.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[行 政 处 罚 事 先 告 知 书]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="70" width="471" height="20" uuid="fb4c9490-d2b3-4daa-a58d-0e70bb90cc03"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["（中原行执）罚告字【 "+($F{yearNum}== null ? "":$F{yearNum})+" 】第 " + ($F{caseNum} == null ? "" : $F{caseNum}) + " 号"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="110" width="475" height="1" uuid="7b876a18-97fb-41f6-8331-55ad133f2004"/>
+				<graphicElement>
+					<pen lineWidth="1.75" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="720" width="475" height="1" uuid="875641f1-d0b0-4c9e-81a4-88df0ac068e2"/>
+				<graphicElement>
+					<pen lineWidth="1.75" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="1" y="725" width="472" height="20" uuid="fb5302d1-0101-42e1-bfa8-a65a1bdf3d97"/>
+				<textElement>
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[本文书一式二份，分别送达当事人、存档。]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="675" width="233" height="20" uuid="3edfb005-632c-4005-9700-b43298cbd7b7"/>
+				<textElement textAlignment="Right">
+					<font fontName="仿宋" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[郑州市中原区城市管理行政执法局]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="114" width="474" height="551" uuid="bbd656f0-0a0b-4954-9d71-b5b4863a8ca2"/>
+				<textElement>
+					<font fontName="仿宋" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paragraph1}+$F{paragraph2}+$F{paragraph3}+$F{paragraph4}+$F{paragraph5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="239" y="695" width="233" height="20" uuid="d3d258b1-26ad-4867-8e98-d4f126ffcd90"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="仿宋" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateStr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

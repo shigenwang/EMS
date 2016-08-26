@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.future.ssh.domain">
+<class name="PClosingReport" table="a_pClosingReport">
+
+	<id name="id" type="long" column="id">
+		 <generator class="native"/>
+	</id>
+	<property name="basicCase" type="string" length="65536"></property>
+	 <property name="hostFlag" type="boolean"></property>
+	 <property name="joinFlag" type="boolean"></property>
+	 <property name="chiefFlag" type="boolean"></property>
+	 <property name="captainFlag" type="boolean"></property>
+	 <property name="legalFlag" type="boolean"></property>
+	 <property name="indCommFlag" type="boolean"></property>
+	 <property name="printFlag" type="boolean"></property>
+     <property name="paymentDate" type="timestamp"></property>
+     
+       <property name="captainName" type="text" ></property>
+	<property name="legalName" type="text" ></property>
+	<property name="bigCaptainName" type="text" ></property>
+	
+	<property name="indCommName" type="text" ></property>
+	
+ 	<property name="legGuideSuggest" type="text" length="65536"></property>
+ 	
+	<property name="captainSuggest" type="text" length="65536"></property>
+	<property name="legSuggest" type="text" length="65536"></property>
+	<property name="bigCaptainSuggest" type="text" length="65536"></property>
+	
+	<property name="ICSuggest" type="text" length="65536"></property>
+	
+	
+	<property name="hostDate" type="timestamp"></property>
+	<property name="captainDate" type="timestamp"></property>
+	<property name="legalDate" type="timestamp"></property>
+	<property name="bigCaptainDate" type="timestamp"></property>
+	<property name="indCommDate" type="timestamp"></property>
+     <!-- summary属性，本类与Summary类的多对一的关系  -->
+     <many-to-one name="summary" class="Summary" column="summary_id"></many-to-one>
+     
+     <!-- accreditation属性，本类与Accreditation 的一对一的关系-->
+     <!-- 基于外键的一对一的的设置，就是在多对一中添加unique属性，为true即可 -->
+     <many-to-one name="accreditation" class="Accreditation" column="accreditation_id" unique="true" ></many-to-one>
+   
+   
+   <property name="proofServicePCFlag" type="boolean"></property>
+     <property name="fineNoteFlag" type="boolean"></property>
+     
+    
+    
+    <set name="proofServicePC">
+	  <key column="proofServicePC_id"></key>
+	  <one-to-many class="Document"/>
+	</set>
+
+	<set name="fineNote">
+	  <key column="fineNote_id"></key>
+	  <one-to-many class="Document"/>
+	</set>
+	
+</class> 
+</hibernate-mapping>

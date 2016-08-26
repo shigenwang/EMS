@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.future.ssh.domain">
+<class name="Summary" table="a_summary">
+
+	<id name="id" type="long" column="id">
+		 <generator class="native"/>
+	</id>
+	
+	<property name="name"  type="string"></property>
+    <property name="penaltyType" type="string"></property>
+    <property name="vioRegulations" type="text" length="65536"></property>
+    <property name="legalBasis" type="text" length="65536"></property>
+    <property name="cutOrder" type="text" length="65536"></property>
+    <property name="timeLimit" type="int"></property>
+
+ </class> 
+</hibernate-mapping>

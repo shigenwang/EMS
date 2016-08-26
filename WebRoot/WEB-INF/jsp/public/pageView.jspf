@@ -1,0 +1,71 @@
+ <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+ <%@ taglib prefix="s" uri="/struts-tags" %>
+ <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+ 
+		<!--分页信息-->
+		<div  class="row">	
+		<div class="col-sm-5">
+		 <div id=PageSelectorBar>
+			<div id=PageSelectorMemo>
+				页次：${currentPage}/${pageCount}页 &nbsp;
+				每页显示：${pageSize }条 &nbsp;
+				总记录数：${recordCount }条
+			</div>
+		</div>
+		</div>	
+		<div class="col-sm-4 col-sm-offset-1" style="padding:0px;">			
+		<ul class="pagination pagination-sm" style="padding:0px; margin:0px;float:right;">
+			   <li>
+			     <a href="javascript:gotoPage(1)" title="首页" style="cursor:hand;" aria-label="Previous">
+			       <span aria-hidden="true">&laquo;</span>
+			     </a>
+			   </li>
+		   
+		  
+				<s:iterator begin="%{beginPageIndex}" end="%{endPageIndex}" var="num">
+				 <li>
+				  <s:if test="#num==currentPage">
+					<%--当前页 --%>
+			        <span style="color:red">${num}</span>
+			      </s:if>
+			     </li>
+			     <li>
+			      <s:else><!-- 如果不是当前页 -->
+				      <span  style="cursor:hand;" onClick="gotoPage(${num});">${num}</span>
+				  </s:else>
+				  </li>
+				</s:iterator>
+		 
+		
+		   		 <li>
+			        <a href="javascript:gotoPage(${pageCount})" title="尾页" style="cursor: hand;" aria-label="Next">
+			          <span aria-hidden="true">&raquo;</span>
+			        </a>
+			     </li>
+         </ul>
+			
+		</div> 		
+			<div class="col-sm-2">
+				<span class="goto"  >转到：</span>
+				<select onchange="gotoPage(this.value)" id="_pn">
+				    <s:iterator begin="1" end="%{pageCount}" var="num">
+				       <option value="${num}">${num }</option>
+				    </s:iterator>    
+				</select>
+				<!-- 用于在列表框中回显当前的所选择的页面 -->
+				<script type="text/javascript">			
+					  $("#_pn").val("${currentPage}");		
+				</script> 
+		</div>
+		</div>
+		
+		<script type="text/javascript">			
+			 function gotoPage(pageNum){
+			// window.location.href = "topic_show.action?id=${id}&pageNum=" + pageNum;				
+			//jquery的append函数是在取出的元素(或标签)内部的尾部添加一个元素。
+			$(document.forms[0]).append("<input type='hidden' name='pageNum' value='"//
+					+pageNum+"'>");
+			
+			 document.forms[0].submit();//提交表单
+			 }				
+		</script>
